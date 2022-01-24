@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>最終課題　プロトタイプ</title>
+  </head>
+  <body>
+    <p>品川区　戸越銀座商店街周辺の災害時の避難場所</p>
+
+    <div id="map" style="width:720px; height:700px"></div>
+
+    <script type="text/javascript">
+    function initMap() {
+      var opts = {
+        zoom: 15,
+        center: new google.maps.LatLng(35.6129264, 139.7303998)
+      };
+      var map = new google.maps.Map(document.getElementById("map"), opts);
+    }
+    </script>
+
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDyRm-r7cGZj2TZdVFp3BYYI16ljog-KA&callback=initMap">
+    </script>
+  </body>
+</html>
