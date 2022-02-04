@@ -1,26 +1,107 @@
 <!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <title>最終課題　プロトタイプ</title>
-  </head>
-  <body>
-    <p>品川区　戸越銀座商店街周辺の災害時の避難場所</p>
-
-    <div id="map" style="width:720px; height:700px"></div>
-
-    <script type="text/javascript">
-    function initMap() {
-      var opts = {
-        zoom: 15,
-        center: new google.maps.LatLng(35.6129264, 139.7303998)
-      };
-      var map = new google.maps.Map(document.getElementById("map"), opts);
-    }
-    </script>
-
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDyRm-r7cGZj2TZdVFp3BYYI16ljog-KA&callback=initMap">
-    </script>
+<html>
+<head>
+<meta charset="utf-8">
+<title>最終課題</title>
+<meta charset="utf-8">
+<style>
+#map {
+  height: 600px;
+  width: 700px;
+}
+</style>
+</head>
+<body>
+  <h1>品川区　戸越周辺の災害時避難所例<h1>
+  
   </body>
+<body>
+<div id="map"></div>
+<script>
+
+  var map;
+  function initMap() {
+    
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 35.610, lng:  139.728},
+      zoom: 15
+    });
+  var markerOptions = {
+        map: map,
+        position: {lat: 35.610545, lng:  139.722371},
+      };
+      var marker1 = new google.maps.Marker(markerOptions);
+
+  var infoWindow = new google.maps.InfoWindow({
+      position: {lat: 35.610545, lng:  139.722371},
+      pixelOffset: new google.maps.Size(0, -30),
+      content:"避難所1",
+  })
+     marker1.addListener('click', () => {
+      infoWindow.open(map);
+     })
+  var markerOptions2 = {
+        map: map,
+        position: {lat: 35.609843691632115, lng:  139.72105168023137},
+      };
+      var marker2 = new google.maps.Marker(markerOptions2);
+  
+      var infoWindow2 = new google.maps.InfoWindow({
+      position: {lat: 35.609843691632115, lng:  139.72105168023137},
+      pixelOffset: new google.maps.Size(0, -30),
+      content:"避難所2",
+  })
+     marker2.addListener('click', () => {
+      infoWindow2.open(map);
+     })
+
+  var markerOptions3 = {
+        map: map,
+        position: {lat: 35.61607722618339,  lng:  139.72305794844627},
+      };
+      var marker3 = new google.maps.Marker(markerOptions3);
+
+    var infoWindow3 = new google.maps.InfoWindow({
+      position: {lat: 35.61607722618339, lng:  139.72305794844627},
+      pixelOffset: new google.maps.Size(0, -30),
+      content:"避難所3",
+  })
+     marker3.addListener('click', () => {
+      infoWindow3.open(map);
+     })
+  }
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9mxKX0czTDx4eMxb5viUfPPFCicy-W3s&callback=initMap" async defer></script>
+</body>
+<body>
+  <big>避難所１：　戸越小学校</big><br>
+  大きな体育館等が存在し, 地震災害等で避難が可能となっている
+  <figure class="pic1">
+    <img src="togoshi1.png" alt="戸越小学校の画像1" width="620" height="240">
+    <figcaption>戸越小学校の画像</figcaption>
+    </figure>
+  
+    
+    <big>避難所2：　大崎高校</big><br>
+    こちらも地震災害等での避難場所として利用可能である
+    <figure class="pic1">
+      <img src="osaki1.png" alt="大崎高校の画像" width="320" height="240">
+      <figcaption>大崎高校の画像１</figcaption>
+      </figure>
+    大崎高校には大きなグラウンドが建物の上にある<br>
+    黄色で囲まれた円の中に災害時の食料等の備蓄がある。
+    <figure class="pic1">
+      <img src="osaki2.png" alt="戸越小学３の画像2" width="720" height="240">
+      <figcaption>大崎高校の画像２</figcaption>
+      </figure>
+    
+    <big>避難所３：　大崎中学校</big><br>
+    こちらも大きな体育館等が存在し, 地震災害等で避難が可能となっている
+    <figure class="pic1">
+      <img src="osaki3.png" alt="戸越小学校の画像1" width="620" height="240">
+      <figcaption>大崎中学校の画像</figcaption>
+      </figure>
+</body>
 </html>
